@@ -1,0 +1,44 @@
+<head>
+<Title>Data Viewer</Title>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/parse.js"></script>
+<script type="text/javascript" src="js/graphcontrol.js"></script>
+<script type="text/javascript" src="js/dataControl.js"></script>
+<script type="text/javascript" src="js/read-csv.js"></script>
+<script type="text/javascript" src="js/dygraph-combined.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<link href="css/master.css" rel="stylesheet">
+</head>    
+
+
+<body onLoad="init()">
+	<div id="header" class="box">
+		
+		<h1 id="title"><---Choose a file.</h1>
+		<h3 id="description">File Description</h3>
+                <input type="file" id="csvFileInput" onchange="handleFile(this.files)" accept=".csv">
+	</div>
+
+	<div id="sidebar" class="box">
+		<h2>Header Fields</h2>
+		<ul id="fieldList">
+		</ul>
+	</div>
+	
+	<div id="graphArea" class="box">
+            <div id="graphTL" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="enterDrag(event)" ondragleave="leaveDrag(event)"></div>
+            <div id="graphTR" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="enterDrag(event)" ondragleave="leaveDrag(event)"></div>
+            <div id="graphBL" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="enterDrag(event)" ondragleave="leaveDrag(event)"></div>
+            <div id="graphBR" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="enterDrag(event)" ondragleave="leaveDrag(event)"></div>
+	</div>
+	
+	<div id="dataView" class="box">
+            <h1 class="data">Raw Data</h1>
+            <h2 id="dataHeader" class="data"></h2>
+            <hr>
+            <div id="dataArea">
+                <table id="dataList"></table>
+            </div>
+	</div>
+
+</body>

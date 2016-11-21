@@ -1,0 +1,132 @@
+body
+{
+    background: black;
+}
+h1
+{
+	text-align: center;
+        margin-top: -.5%;
+}
+
+h2
+{
+	text-align: center;
+        margin-top: 1%;
+}
+
+h3
+{
+    text-align: center;
+    margin-top: -2%;
+}
+
+#csvFileInput
+{
+    position: absolute;
+    top:35%;
+    left: 1%;
+}
+
+#header
+{
+	position: absolute;
+	top: 1%;
+	bottom: 93%;
+	right: 1%;
+	left: 1%;
+	padding: .5%;
+	background: gray;
+}
+
+
+#sidebar 
+{
+    position: absolute;
+    left: 1%;
+    right: 85%;
+    top: 8%;
+    bottom: 1%;
+    background: gray;
+}
+
+#graphArea
+{
+    position: absolute;
+    left: 16%;
+    right: 1%;
+    top: 8%;
+    bottom: 1%;
+    background: gray;
+}
+#dataView
+{
+    position: absolute;
+    left: 30%;
+    right: 30%;
+    top: 5%;
+    bottom: 5%;
+    
+    background: rgba(0,0,0,.8);
+    border-radius: 10px;
+    
+    display: none;
+}
+
+#dataArea
+{
+    
+}
+
+#graphTL
+{
+    position: absolute;
+    top: 1%;
+    bottom: 50.5%;
+    right: 50.5%;
+    left: 1%;
+    
+    background: bisque;
+}
+
+#graphTR
+{
+    position: absolute;
+    top: 1%;
+    bottom: 50.5%;
+    right: 1%;
+    left: 50.5%;
+    
+    background: bisque;
+}
+
+#graphBR
+{
+    position: absolute;
+    top: 50.5%;
+    bottom: 1%;
+    right: 1%;
+    left: 50.5%;
+    
+    background: bisque;
+}
+
+#graphBL
+{
+    position: absolute;
+    top: 50.5%;
+    bottom: 1%;
+    right: 50.5%;
+    left: 1%;
+    
+    background: bisque;
+}
+
+.data
+{
+    color: white;
+    margin-top: 2%;
+}
+.box
+{
+    border-radius: 10px;
+}
