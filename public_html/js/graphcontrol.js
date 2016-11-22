@@ -20,7 +20,7 @@ function drop(event)
     var i = 0;
     while(searchFlag == 1) //Search through the dropTree looking for one of our drop zones (graph Divs)
     {
-        if(dropTree[i].id == "graphTL")
+        if(dropTree[i].id == "graphTL" || dropTree[i].id == "graphTR" || dropTree[i].id == "graphBL"  || dropTree[i].id == "graphBR" )
         {
             var graphTarget = dropTree[i].id;
             searchFlag =0; //Stop Searching
@@ -63,32 +63,38 @@ function initGraphs()
                           {
                             drawPoints: true,
                             showRoller: true,
-                            valueRange: [0.0, 1.0],
-                            labels: ['Time', 'Data']
+                            legend: 'always',
+                            labels: ['Time', 'Data'],
+                            yLabel: "Data",
+                            xLabel: "Time",
+                            showRangeSelector: true
                           });
                           
     DyngraphTR = new Dygraph(document.getElementById("graphTR"), TRdata,
                           {
                             drawPoints: true,
                             showRoller: true,
-                            valueRange: [0.0, 1.0],
-                            labels: ['Time', 'Data']
+                            legend: 'always',
+                            labels: ['Time', 'Data'],
+                            showRangeSelector: true
                           });  
                           
     DyngraphBR = new Dygraph(document.getElementById("graphBR"), BRdata,
                         {
                           drawPoints: true,
                           showRoller: true,
-                          valueRange: [0.0, 1.0],
-                          labels: ['Time', 'Data']
+                          legend: 'always',
+                          labels: ['Time', 'Data'],
+                          showRangeSelector: true
                         });    
     
     DyngraphBL = new Dygraph(document.getElementById("graphBL"), BLdata,
                         {
                           drawPoints: true,
                           showRoller: true,
-                          valueRange: [0.0, 1.0],
-                          labels: ['Time', 'Data']
+                          legend: 'always',
+                          labels: ['Time', 'Data'],
+                          showRangeSelector: true
                         });
 }
 
@@ -101,19 +107,44 @@ function addSet(dataset,target)
         case "graphTL":
             prepData(dataset,"TLdata");
             console.log(TLdata);
-            DyngraphTL.updateOptions( { 'file': TLdata } );
+            DyngraphTL.updateOptions( 
+                    {   file: TLdata,
+                        title: dataset.toString(),
+                        labels: ['Time', dataset.toString()],
+                        xLabel: "Time",
+                        yLabel: dataset.toString()
+                    } );
+            console.log("Graph Updated");
             break;
         case "graphTR":
             prepData(dataset,"TRdata");
-            DyngraphTL.updateOptions( { 'file': TRdata } );
+            DyngraphTR.updateOptions( 
+                    {   file: TRdata,
+                        title: dataset.toString(),
+                        labels: ['Time', dataset.toString()],
+                        xLabel: "Time",
+                        yLabel: dataset.toString()
+                    } );
             break;
         case "graphBL":
             prepData(dataset,"BLdata");
-            DyngraphTL.updateOptions( { 'file': BLdata } );
+            DyngraphBL.updateOptions( 
+                    {   file: BLdata,
+                        title: dataset.toString(),
+                        labels: ['Time', dataset.toString()],
+                        xLabel: "Time",
+                        yLabel: dataset.toString()
+                    } );
             break;
         case "graphBR":
             prepData(dataset,"BRdata");
-            DyngraphTL.updateOptions( { 'file': BRdata } );
+            DyngraphBR.updateOptions( 
+                    {   file: BRdata,
+                        title: dataset.toString(),
+                        labels: ['Time', dataset.toString()],
+                        xLabel: "Time",
+                        yLabel: dataset.toString()
+                    } );
             break;
         default:
             console.log("Can't find a graph to add data to.");

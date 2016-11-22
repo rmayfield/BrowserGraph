@@ -1,3 +1,5 @@
+var headerFields;
+
 function parseHeader(dataArray)
 {
 	var currentLine = "";
@@ -20,7 +22,7 @@ function parseHeader(dataArray)
                 header = 0; //So we exit loop
                 headerLine = i;
                 firstLine = i + 2; //Mark the first line
-                var headerFields = currentLine.toString().split(",");
+                headerFields = currentLine.toString().split(",");
                 console.log("Found Log Fields:");
                 for(var j = 1 ; j<headerFields.length ; j++)
                 {

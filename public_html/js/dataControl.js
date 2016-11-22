@@ -19,6 +19,11 @@ function prepData(dataset,target)
     var dataIndex = 1; //Data index position of the data being added
     var dataFields;
     
+    for(var j = 0 ; j<headerFields.length ; j++)
+    {
+        if(headerFields[j]==dataset.toString()) dataIndex = j;
+    }
+    
     console.log("Adding " + dataset.toString() + " to " + target);
     //dataHolder.push(["Timestamp",target]);
     
@@ -28,7 +33,8 @@ function prepData(dataset,target)
         if(currentLine.toString().includes(",")) //Standard data line
         {
             dataFields = currentLine.toString().split(",");
-            dataHolder.push([dataFields[0],dataFields[dataIndex]]); //Add to string
+            //dataHolder.push([dataFields[0],dataFields[dataIndex]]); //Add to string
+            dataHolder.push([i,dataFields[dataIndex]]); //Add to string
             
         }else //No commas, assume it's a note
         {         
