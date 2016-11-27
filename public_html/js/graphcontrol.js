@@ -1,3 +1,5 @@
+var sync; //Graph Sync Object
+
 //These three functions allow drag and drop of data fields
 function allowDrop(event) 
 {
@@ -96,6 +98,12 @@ function initGraphs()
                           labels: ['Time', 'Data'],
                           showRangeSelector: true
                         });
+                        
+    sync = Dygraph.synchronize(DyngraphTL, DyngraphTR, DyngraphBL, DyngraphBR, {
+       selection: true,
+       zoom: true,
+       range: false
+    });
 }
 
 function addSet(dataset,target)
